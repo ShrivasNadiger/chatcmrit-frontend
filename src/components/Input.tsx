@@ -3,7 +3,7 @@ import { useTextArea } from "../contexts/textAreaContext";
 
 function Input() {
     const textAreaId = useId();
-    const { setText } = useTextArea();
+    const { setText, setSender } = useTextArea();
     const [localValue, setLocalValue] = useState<string>("");
 
     const textInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -13,6 +13,7 @@ function Input() {
     const textBtnClicked = () => {
         setText(localValue.trim())
         setLocalValue("");
+        setSender("user")
     }
     return (
         <div className="fixed bottom-0 left-0 right-0 bg-white/100 border-t border-gray-200">
