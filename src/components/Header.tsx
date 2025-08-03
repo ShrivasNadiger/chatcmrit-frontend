@@ -1,18 +1,23 @@
-import Logo from "./Logo"
-import ThemeBtn from "./ThemeBtn"
+import Logo from "./Logo";
+import ThemeBtn from "./ThemeBtn";
 
 function Header() {
     return (
-        <div className="flex justify-between item-center px-4 sticky top-0 left-0 right-0 bg-gray-100">
-            <Logo />
-            <div className="flex items-center">
-                <h1 className=" dark:text-white text-3xl">Chatcmrit</h1>
+        <header className="flex justify-between items-center px-4 py-2 sticky top-0 left-0 right-0 bg-white dark:bg-gray-900 
+  border-b border-gray-200 dark:border-gray-700 
+  shadow-sm dark:shadow-md transition-colors duration-300 z-10">
+            <div className="flex items-center gap-3">
+                <Logo />
+                <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                    Chatcmrit
+                </h1>
             </div>
-            <div className="order-last flex justify-center item-center">
+
+            <div className="flex items-center gap-4">
                 <ThemeBtn />
             </div>
-        </div>
-    )
+        </header>
+    );
 }
 
-export default Header
+export default Header;
