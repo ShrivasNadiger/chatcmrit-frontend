@@ -1,9 +1,9 @@
 
 import { useEffect, useRef } from "react";
-import { usemessagesContext } from "../contexts/messagesThredContext";
+import { useMessagesContext } from "../contexts/MessagesThreadContext";
 
 export default function ChatCard() {
-    const { messages } = usemessagesContext();
+    const { messages } = useMessagesContext();
     const bottomRef = useRef<HTMLDivElement | null>(null);
     useEffect(() => {
         bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "start", });

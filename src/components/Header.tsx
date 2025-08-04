@@ -1,4 +1,4 @@
-import ThemeBtn from "./DarkModeBtn";
+import DarkModeBtn from "./DarkModeBtn";
 import Logo from "./Logo";
 
 function Header() {
@@ -14,7 +14,7 @@ function Header() {
             </div>
 
             <div className="flex items-center gap-4">
-                <ThemeBtn />
+                <DarkModeBtn />
             </div>
         </header>
     );

@@ -1,10 +1,10 @@
 // App.tsx
 import { useEffect } from "react";
-import ChatThred from "./components/ChatThred";
+import ChatThread from "./components/ChatThread";
 import Header from "./components/Header";
 import Input from "./components/UserTextInput";
 import { DarkModeContextProvider, useDarkMode } from "./contexts/DarkModeContext";
-import { MessagesContextProvider } from "./contexts/messagesThredContext";
+import { MessagesContextProvider } from "./contexts/MessagesThreadContext";
 
 function Content() {
   const { themeMode } = useDarkMode();
@@ -19,7 +19,7 @@ function Content() {
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Header />
       <MessagesContextProvider>
-        <ChatThred />
+        <ChatThread />
         <Input />
       </MessagesContextProvider>
     </div>

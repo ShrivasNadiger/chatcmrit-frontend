@@ -7,9 +7,8 @@ export interface Message {
     textSource: Sender,
 }
 
-export interface messagesContextType {
-    messages: Array<Message>;
+export interface MessagesContextType {
+    messages: Array<Message>,
     setMessage: React.Dispatch<React.SetStateAction<Array<Message>>>,
     addText: (newText: Message) => void,
-
 };

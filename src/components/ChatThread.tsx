@@ -1,6 +1,6 @@
 import Chatcards from "./Chatcards";
 
-function ChatThred() {
+function ChatThread() {
     return (
         <div className="w-full my-2">
             <div className="w-full sm:mx-auto sm:w-[85vw] pb-20  dark:bg-gray-900 flex flex-col transition-colors duration-300">
@@ -10,4 +10,4 @@ function ChatThred() {
     );
 }
 
-export default ChatThred;
+export default ChatThread;

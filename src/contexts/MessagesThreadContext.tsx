@@ -1,10 +1,11 @@
 
 import { createContext, useContext, useState, type ReactNode } from "react";
-import type { Message, messagesContextType } from "../types/messageContextTypes";
+import type { Message, MessagesContextType } from "../types/MessageContextTypes";
 
 
 
-const messagesContext = createContext<messagesContextType | undefined>(undefined);
+
+const MessagesContext = createContext<MessagesContextType | undefined>(undefined);
 
 export function MessagesContextProvider({ children }: { children: ReactNode }) {
     const [messages, setMessage] = useState<Message[]>([]);
@@ -14,14 +15,14 @@ export function MessagesContextProvider({ children }: { children: ReactNode }) {
     }
 
     return (
-        <messagesContext.Provider value={{ messages, setMessage, addText, }}>
+        <MessagesContext.Provider value={{ messages, setMessage, addText, }}>
             {children}
-        </messagesContext.Provider>
+        </MessagesContext.Provider>
     );
 }
 
-export const usemessagesContext = () => {
-    const ctx = useContext(messagesContext);
+export const useMessagesContext = () => {
+    const ctx = useContext(MessagesContext);
     if (!ctx) {
         throw new Error("usemessagesContext must be used within messagesContextProvider");
     }

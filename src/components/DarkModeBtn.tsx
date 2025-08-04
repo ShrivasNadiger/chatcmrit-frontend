@@ -1,6 +1,6 @@
 import { useDarkMode } from "../contexts/DarkModeContext";
 
-export default function ThemeBtn() {
+export default function DarkModeBtn() {
     const { setisChecked, themeMode } = useDarkMode();
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const checked = e.target.checked;
