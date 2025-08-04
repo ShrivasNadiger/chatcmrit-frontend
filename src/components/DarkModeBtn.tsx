@@ -10,7 +10,7 @@ export default function ThemeBtn() {
     return (
         <div className="flex items-center gap-2">
             <label className="relative inline-flex items-center cursor-pointer select-none">
-                <input
+               <input
                     type="checkbox"
                     className="sr-only peer"
                     checked={themeMode === "dark"}

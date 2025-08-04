@@ -11,9 +11,11 @@ function Input() {
     };
 
     const textBtnClicked = () => {
-        if (localValue === "") return
+        if (localValue.trim() === "") {
+            setLocalValue(""); return
+        }
         addText({
-            text: localValue,
+            text: localValue.trim(),
             textSource: "user",
         })
         setLocalValue("");
