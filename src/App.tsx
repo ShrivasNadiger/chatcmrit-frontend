@@ -1,13 +1,13 @@
 // App.tsx
 import { useEffect } from "react";
-import Body from "./components/Body";
+import ChatThred from "./components/ChatThred";
 import Header from "./components/Header";
-import Input from "./components/Input";
-import { TextAreaContextProvider } from "./contexts/TextAreaContext";
-import { ThemeContextProvider, useTheme } from "./contexts/ThemeContext";
+import Input from "./components/UserTextInput";
+import { DarkModeContextProvider, useDarkMode } from "./contexts/DarkModeContext";
+import { MessagesContextProvider } from "./contexts/messagesThredContext";
 
 function Content() {
-  const { themeMode } = useTheme();
+  const { themeMode } = useDarkMode();
 
   useEffect(() => {
     const html = document.documentElement;
@@ -18,18 +18,18 @@ function Content() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Header />
-      <TextAreaContextProvider>
-        <Body />
+      <MessagesContextProvider>
+        <ChatThred />
         <Input />
-      </TextAreaContextProvider>
+      </MessagesContextProvider>
     </div>
   );
 }
 
 export default function App() {
   return (
-    <ThemeContextProvider>
+    <DarkModeContextProvider>
       <Content />
-    </ThemeContextProvider>
+    </DarkModeContextProvider>
   );
 }

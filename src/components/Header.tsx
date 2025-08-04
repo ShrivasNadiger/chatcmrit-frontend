@@ -1,5 +1,5 @@
+import ThemeBtn from "./DarkModeBtn";
 import Logo from "./Logo";
-import ThemeBtn from "./ThemeBtn";
 
 function Header() {
     return (

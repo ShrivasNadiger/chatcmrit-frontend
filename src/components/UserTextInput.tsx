@@ -1,9 +1,9 @@
 import { useId, useState } from "react";
-import { useTextArea } from "../contexts/textAreaContext";
+import { usemessagesContext } from "../contexts/messagesThredContext";
 
 function Input() {
     const textAreaId = useId();
-    const { setText, setSender } = useTextArea();
+    const { addText } = usemessagesContext();
     const [localValue, setLocalValue] = useState<string>("");
 
     const textInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -11,9 +11,13 @@ function Input() {
     };
 
     const textBtnClicked = () => {
-        setText(localValue.trim());
+        if (localValue === "") return
+        addText({
+            text: localValue,
+            textSource: "user",
+        })
         setLocalValue("");
-        setSender("user");
+
     };
 
     return (
