@@ -1,5 +1,6 @@
 import { useId, useState } from "react";
 import { useMessagesContext } from "../contexts/MessagesThreadContext";
+import { setKeyValues } from "../Key/UserTextInputKeyboardHandler";
 
 function Input() {
     const textAreaId = useId();
@@ -9,7 +10,9 @@ function Input() {
     const textInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setLocalValue(e.target.value);
     };
-
+    const handelKeys = (e:React.KeyboardEvent) => {
+        setKeyValues(e, { localValue, setLocalValue, addText });
+    }
     const textBtnClicked = () => {
         if (localValue.trim() === "") {
             setLocalValue(""); return
@@ -30,8 +33,9 @@ function Input() {
                         value={localValue}
                         name="chat-text-area"
                         id={textAreaId}
-                        placeholder="Hi! I am our Assistant.. Ask me Anything about Cmrit "
+                        placeholder="Hi! I am our Assistant.. Ask me Anything about CMRIT.. "
                         onChange={textInput}
+                        onKeyDown={handelKeys}
                         className="
               flex-1 resize-y min-h-[1.5rem] px-4 py-2 rounded-lg 
               border border-gray-300 dark:border-gray-600 
